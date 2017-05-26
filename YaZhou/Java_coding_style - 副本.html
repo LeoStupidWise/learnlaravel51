@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Java_coding_style</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+
+/* TOC
+=============================================================================*/
+
+#TOC {
+  padding:0;margin:0 auto;
+  max-width:24%; height:95%;
+  left: 0;
+  position: fixed;
+  overflow: auto;
+  white-space:nowrap;
+}
+.TOCEntry { font-family: sans-serif;}
+.TOCEntry a { text-decoration: none; color: black; font-size: 110%; font-weight: bold;display: block;}
+.TOCEntry a:hover{color:red;}
+.TOCLevel1 { font-size: .11em; font-weight: bold;margin-left: 0;}
+.TOCLevel2 { font-size: .10em; margin-left: 1em; }
+.TOCLevel3 { font-size: .8em; margin-left: 2em; }
+.TOCLevel4 { font-size: .7em; margin-left: 2.5em; }
+.TOCLevel5 { font-size: .6em; margin-left: 3em; }
+.TOCLevel6 { font-size: .5em; margin-left: 3.5em; }
+.TOCSectNum:after { content: " "; }
+/* TABLES
+=============================================================================*/
+
+table {
+  border-collapse: collapse;
+}
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+</style>
+<script type="text/javascript">
+function toc() {
+  var toc = document.getElementById("TOC");
+  if (!toc) {
+    toc = document.createElement("div");
+    toc.id = "TOC";
+    document.body.insertBefore(toc, document.body.firstChild);
+  }
+  var headings;
+  if (document.querySelectorAll)
+    headings = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+  else
+    headings = findHeadings(document.body, []);
+  function findHeadings(root, sects) {
+    for(var c = root.firstChild; c != null; c = c.nextSibling) {
+      if (c.nodeType !== 1) continue;
+      if (c.tagName.length == 2 && c.tagName.charAt(0) == "H")
+        sects.push(c);
+      else
+        findHeadings(c, sects);
+    }
+    return sects;
+  }
+  var sectionNumbers = [0,0,0,0,0,0];
+  for(var h = 0; h < headings.length; h++) {
+    var heading = headings[h];
+    if (heading.parentNode == toc) continue;
+    var level = parseInt(heading.tagName.charAt(1));
+    if (isNaN(level) || level < 1 || level > 6) continue;
+    sectionNumbers[level-1]++;
+    for(var i = level; i < 6; i++) sectionNumbers[i] = 0;
+    var sectionNumber = sectionNumbers.slice(0,level).join(".")
+    var span = document.createElement("span");
+    span.className = "TOCSectNum";
+    heading.insertBefore(span, heading.firstChild);
+    var anchor = document.createElement("a");
+    anchor.name = "TOC"+sectionNumber;
+    heading.parentNode.insertBefore(anchor, heading);
+    var link = document.createElement("a");
+    var currentUrl = window.location.href.split("/");
+    var fileName = currentUrl[currentUrl.length - 1].split("#")[0];
+    link.href =  fileName  + "#TOC" + sectionNumber;
+    link.innerHTML = heading.innerHTML;
+    var entry = document.createElement("div");
+    entry.className = "TOCEntry TOCLevel" + level;
+    entry.appendChild(link);
+    toc.appendChild(entry);
+  }
+}
+window.onload=function(){ toc()}
+</script>
+</head>
+<body>
+<h2>PHP后台代码风格参考规范</h2>
+<blockquote>
+<p>Author：Zoe</p>
+<p>Last update：2017/03/21</p>
+</blockquote>
+<h3>1 概览</h3>
+<blockquote>
+<ul>
+<li>
+<p>PHP代码文件必须以 < ?php 或 < ?= 标签开始。</p>
+</li>
+<li>
+<p>PHP代码文件必须以 <font color="red">不带BOM的 UTF-8</font> 编码。</p>
+</li>
+<li>
+<p>PHP代码中应该只定义类、函数、常量等声明，或其他会产生 从属效应 的操作（如：生成文件输出以及修改.ini配置文件等），二者只能选其一。</p>
+</li>
+<li>
+<p>命名空间以及类必须符合 PSR 的自动加载规范。</p>
+</li>
+  <li>
+    <p>类的命名必须遵循 <font color="red">StudlyCaps</font> 大写开头的驼峰命名规范。</p>
+  </li>
+  <li>
+    <p>类中的常量所有字母都必须大写，单词间用下划线分隔。</p>
+  </li>
+  <li>
+    <p> 方法名称必须符合 <font color="red">camelCase</font> 式的小写开头驼峰命名规范。</p>
+  </li>
+</ul>
+</blockquote>
+<h3>2 命名空间和类</h3>
+<p>package语句不换行，即package语句写在一行里。</p>
+<h4>2.2 import语句</h4>
+<h5>2.2.1 import不要使用通配符</h5>
+<p>即，不要出现类似这样的import语句：import java.util.*;</p>
+<h5>2.2.2 不要换行</h5>
+<p>import语句不换行，即每个import语句独立成行。</p>
+<h4>2.3 类声明</h4>
+<h5>2.3.1 只有一个顶级类声明</h5>
+<p>每个顶级类都在一个与它同名的源文件中(当然，还包含.java后缀)。即内部类不能和类文件名相同。</p>
+<h5>2.3.2 类成员顺序</h5>
+<p>每个类的类成员尽量按 常量 -&gt; 类成员变量 -&gt; 静态代码块 -&gt; 构造方法 -&gt; public方法 -&gt; protected方法 -&gt; private方法 -&gt; 静态方法 的顺序排列。此处根据具体情况可做调整，并不严格要求，但必须遵守先写类成员变量后写成员方法的格式。</p>
+<h5>2.3.3 重载：永不分离</h5>
+<p>当一个类有多个构造函数，或是多个同名方法，这些函数/方法应该按顺序出现在一起，中间不要放进其它函数/方法。</p>
+<h3>3 命名约定</h3>
+<h4>3.1 包名</h4>
+<p>包名全部小写，连续的单词只是简单地连接起来，不使用下划线。</p>
+<h4>3.2 类名</h4>
+<blockquote>
+<ul>
+<li>
+<p>类名都以大驼峰式命名法风格编写。</p>
+</li>
+<li>
+<p>类名通常是名词或名词短语，接口名称有时可能是形容词或形容词短语。建议使用符合该类特定含义的英文名称，如UserDao（表示操作数据库用户表的类）、ProfileAcivity(表示个人信息Activity)。</p>
+</li>
+<li>
+<p>测试类的命名以它要测试的类的名称开始，以Test结束。例如，UserDaoTest或StringUtilTest。</p>
+</li>
+</ul>
+</blockquote>
+<h4>3.3 方法名</h4>
+<blockquote>
+<ul>
+<li>
+<p>方法名都以小驼峰式命名法风格编写。</p>
+</li>
+<li>
+<p>方法名通常是动词或动词短语。如addParameter()、login()、getUserInfo()。</p>
+</li>
+<li>
+<p>测试方法名要求以test开头，如testLogin()、testGetUserInfo();</p>
+</li>
+</ul>
+</blockquote>
+<h4>3.4 常量名</h4>
+<p>常量名应全部字母大写，用下划线分隔单词，如USER_NAME，NETWORK_STATE。</p>
+<pre><code>// 常量
+static final int NUMBER = 5;
+static final ImmutableList&lt;String&gt; NAMES = ImmutableList.of(&quot;Ed&quot;, &quot;Ann&quot;);
+static final Joiner COMMA_JOINER = Joiner.on(',');  // because Joiner is immutable
+static final SomeMutableType[] EMPTY_ARRAY = {};
+enum SomeEnum { ENUM_CONSTANT }
+
+// 非常量
+static String nonFinal = &quot;non-final&quot;; 
+final String nonStatic = &quot;non-static&quot;;
+static final Set&lt;String&gt; mutableCollection = new HashSet&lt;String&gt;();
+static final ImmutableSet&lt;SomeMutableType&gt; mutableElements = ImmutableSet.of(mutable);
+static final Logger logger = Logger.getLogger(MyClass.getName());
+static final String[] nonEmptyArray = {&quot;these&quot;, &quot;can&quot;, &quot;change&quot;};
+</code></pre>
+
+<p>这些名字通常是名词或名词短语。</p>
+<h4>3.5 非常量字段名</h4>
+<blockquote>
+<ul>
+<li>
+<p>非常量字段名以小驼峰式命名法风格编写。</p>
+</li>
+<li>
+<p>这些名字通常是名词或名词短语。</p>
+</li>
+</ul>
+</blockquote>
+<h4>3.6 参数名</h4>
+<blockquote>
+<ul>
+<li>
+<p>非常量字段名以小驼峰式命名法风格编写。</p>
+</li>
+<li>
+<p>参数应该避免用单个字符命名。</p>
+</li>
+<li>
+<p>暴露给前端的参数以下划线法命名法命名，内部使用参数以小驼峰式命名法命名。</p>
+</li>
+</ul>
+</blockquote>
+<h4>3.7 局部变量名</h4>
+<blockquote>
+<ul>
+<li>
+<p>局部变量名以小驼峰式命名法风格编写。</p>
+</li>
+<li>
+<p>避免用单字符进行命名，除了临时变量和循环变量。</p>
+</li>
+<li>
+<p>即使局部变量是final和不可改变的，也不应该把它示为常量，自然也不能用常量的规则去命名它。</p>
+</li>
+</ul>
+</blockquote>
+<h4>3.8 类变量名</h4>
+<p>类变量名以小驼峰式命名法风格编写，如count，userNameTextView。</p>
+<pre><code>public class UserService {
+   // 类变量名
+   private UserDao userDao = new UserDaoImpl();
+   private int count;
+
+   public boolean login(String userName, String password) {
+        boolean result = true;
+        if(userDao.getUser(userName, password) != null) {
+            return true;
+        }
+        return false;
+   }
+}
+</code></pre>
+
+<h3>4 格式</h3>
+<h4>4.1 使用大括号(即使是可选的)</h4>
+<p>大括号与if, else, for, do, while语句一起使用，即使只有一条语句(或是空)，也应该把大括号写上。</p>
+<h4>4.2 非空块：K &amp; R 风格</h4>
+<p>对于非空块和块状结构，大括号遵循Kernighan和Ritchie风格 (Egyptian brackets)：</p>
+<blockquote>
+<ul>
+<li>左大括号前不换行</li>
+<li>左大括号后换行</li>
+<li>右大括号前换行</li>
+<li>如果右大括号是一个语句、函数体或类的终止，则右大括号后换行; 否则不换行。例如，如果右大括号后面是else或逗号，则不换行。</li>
+</ul>
+</blockquote>
+<p><em>示例：</em></p>
+<pre><code>return new MyClass() {
+  @Override public void method() {
+if (condition()) {
+   try {
+ something();
+   } catch (ProblemException e) {
+ recover();
+   }
+  }
+}
+};
+</code></pre>
+
+<h4>4.3 空块：可以用简洁版本</h4>
+<p>一个空的块状结构里什么也不包含，大括号可以简洁地写成{}，不需要换行。</p>
+<p><em>示例：</em></p>
+<pre><code>void doNothing() {}
+</code></pre>
+
+<p><em><strong>例外</strong></em>：如果它是一个多块语句的一部分(if/else 或 try/catch/finally) ，即使大括号内没内容，右大括号也要换行。</p>
+<h4>4.4 列限制：120个字符</h4>
+<p>要求每行代码最大字符数为120个字符，除了下述例外，任何一行如果超过这个字符数限制，必须自动换行。</p>
+<p><em>例外</em>：</p>
+<ul>
+<li>不可能满足列限制的行(例如，Javadoc中的一个长URL，或是一个长的JSNI方法参考)。</li>
+<li>package和import语句(见3.2节和3.3节)。</li>
+</ul>
+<blockquote>
+<ul>
+<li>若使用Eclipse，可在工具栏中依次点击Windows -&gt; Preferences -&gt; Code Style -&gt; Formatter -&gt;Edit -&gt; Line Wrapping -&gt; 在Maximum line width中填写列字符限制长度，选择Apply或OK即可。当使用“代码自动格式化（Ctrl + Shift + F）”后Eclipse会自动根据行字符限制对代码进行换行处理。</li>
+</ul>
+</blockquote>
+<h4>4.5 空白</h4>
+<h5>4.5.1 垂直空白</h5>
+<p>以下情况需要使用一个空行：</p>
+<ol>
+<li>类内连续的成员之间：字段，构造函数，方法，嵌套类，静态初始化块，实例初始化块。</li>
+<li>例外：两个连续字段之间的空行是可选的，用于字段的空行主要用来对字段进行逻辑分组。</li>
+<li>在函数体内，语句的逻辑分组间使用空行。</li>
+<li>类内的第一个成员前或最后一个成员后的空行是可选的(既不鼓励也不反对这样做，视个人喜好而定)。</li>
+<li>要满足本文档中其他节的空行要求(比如import语句)</li>
+</ol>
+<h5>4.5.2 水平空白</h5>
+<p>除了语言需求和其它规则，并且除了文字，注释和Javadoc用到单个空格，单个ASCII空格也出现在以下几个地方：</p>
+<ol>
+<li>分隔任何保留字与紧随其后的左括号(()(如if, for catch等)。</li>
+<li>分隔任何保留字与其前面的右大括号(})(如else, catch)。</li>
+<li>
+在任何左大括号前({)，两个例外：
+<ul>
+<li>@SomeAnnotation({a, b})(不使用空格)。</li>
+<li>String[][] x = {{&quot;1&quot;,&quot;2&quot;,&quot;3&quot;},{&quot;4&quot;,&quot;5&quot;,&quot;6&quot;}};(大括号间没有空格)。</li>
+</ul>
+</li>
+<li>
+在任何二元或三元运算符的两侧。这也适用于以下“类运算符”符号：
+<ul>
+<li>类型界限中的&amp;(&lt;T extends Foo &amp; Bar&gt;)。</li>
+<li>catch块中的管道符号(catch (FooException | BarException e)。</li>
+<li>foreach语句中的分号。</li>
+</ul>
+</li>
+<li>在, : ;及右括号())后。</li>
+<li>如果在一条语句后做注释，则双斜杠(//)两边都要空格。这里可以允许多个空格，但没有必要。</li>
+<li>类型和变量之间：List list。</li>
+<li>数组初始化中，大括号内的空格是可选的，即new int[] {5, 6}和new int[] { 5, 6 }都是可以的。(最好加上空格)</li>
+</ol>
+<h3>5 注释</h3>
+<p>写注释的目的是为了增加代码的可读性，便于后期维护，并不是所有的代码块都需要添加注释。</p>
+<p>若使用Eclipse，可对注释模板进行配置。设置注释模板的入口： Window -&gt; Preference -&gt; Java -&gt; Code Style -&gt; Code Template，然后展开Comments节点，就是所有需要设置注释模板的元素了（此步骤以下简称“打开设置注释模板界面”），具体注释要求和模板内容，下面会进行阐述。</p>
+<h4>5.1 类注释风格</h4>
+<p>要求每个类必须写明类的功能描述、编写者、编写时间、版本，若该类被修改请及时更新这些信息。如下：</p>
+<pre><code> /**
+  * 车辆配置Activity
+  * @date 2015-6-28 上午10:41:41 
+  * @version V2.5
+  */
+public class CarConfigurationActivity extends BaseActivity {
+   // ...
+}
+</code></pre>
+
+<blockquote>
+<p>Eclipse注释模板设置：打开设置注释模板界面选择Type进行编辑，设置内容如下：</p>
+</blockquote>
+<pre><code>/** 
+ * @date ${date} ${time} 
+ * @version V1.0
+ */
+</code></pre>
+
+<h4>5.2 成员属性注释风格</h4>
+<p>直接在类成员属性上方或结束处使用“//”进行注释即可，需注意“//”前后空格。</p>
+<p><em>示例：</em></p>
+<pre><code>public class Response&lt;T&gt; implements Serializable {
+
+private int status; // 状态码
+private String message; // 请求结果信息
+private T response; // 请求返回的数据
+
+// ...
+}
+</code></pre>
+
+<h4>5.3 一般方法注释风格</h4>
+<p>需写明方法的功能描述、参数含义、返回值含义、异常信息（如无异常抛出则不需写）。</p>
+<p><em>示例：</em></p>
+<pre><code>/*
+ * 添加需提交的参数对
+ * @param params 参数对
+ * @return 当前对象
+ * @throws Exception
+ */
+public RequestClient addParameter(String... params) throws Exception {
+
+//...
+}
+</code></pre>
+
+<blockquote>
+<p>Eclipse注释模板设置：打开设置注释模板界面选择Methods进行编辑，设置内容如下：</p>
+</blockquote>
+<pre><code>/**
+ * ${tags}
+ */
+</code></pre>
+
+<h4>5.4 构造方法注释风格</h4>
+<p>只需指定方法的功能描述为Constructor即可，其它参考一般方法注释风格。</p>
+<blockquote>
+<p>Eclipse注释模板设置：打开设置注释模板界面选择Methods进行编辑，设置内容如下：</p>
+</blockquote>
+<pre><code>/**
+ * Constructor
+ * ${tags}
+ */
+</code></pre>
+
+<h4>5.5 普通块代码注释</h4>
+<p>直接在类成员属性上方或结束处使用“//”进行注释即可。</p>
+<h3>6 其它</h3>
+<h4>6.1 switch语句中default的情况要写出来</h4>
+<p>每个switch语句都必须包含一个default语句组，即使它什么代码也不包含。</p>
+<h4>6.2 捕获的异常：不能忽视（打印+添加注释）</h4>
+<p>除了下面这种例子，对捕获的异常不做响应是极少正确的。(典型的响应方式是打印日志，或者如果它被认为是不可能的，则把它当作一个AssertionError重新抛出。)</p>
+<p>如果它确实是不需要在catch块中做任何响应，需要做注释加以说明(如下面的例子)。</p>
+<pre><code>try {
+  int i = Integer.parseInt(response);
+  return handleNumericResponse(i);
+} catch (NumberFormatException ok) {
+  // it's not numeric; that's fine, just continue
+}
+return handleTextResponse(response);
+</code></pre>
+
+<p><em>例外</em>：在测试中，如果一个捕获的异常被命名为expected，则它可以被不加注释地忽略。下面是一种非常常见的情形，用以确保所测试的方法会抛出一个期望中的异常， 因此在这里就没有必要加注释。</p>
+<pre><code>try {
+  emptyStack.pop();
+  fail();
+} catch (NoSuchElementException expected) {
+}
+</code></pre>
+
+<h4>6.3 @Override注解</h4>
+<p>只要是合法的，就把@Override注解给用上。</p>
+<h4>6.4 静态成员：使用类进行调用</h4>
+<p>使用类名调用静态的类成员，而不是具体某个对象或表达式。</p>
+<p><em>示例：</em></p>
+<pre><code>Foo aFoo = ...;
+Foo.aStaticMethod(); // good
+aFoo.aStaticMethod(); // bad
+somethingThatYieldsAFoo().aStaticMethod(); // very bad
+</code></pre>
+
+<h4>6.5 返回数据结构</h4>
+<p>返回给前端的数据必须符合以下结构：</p>
+<pre><code>{
+  &quot;header&quot;: { //头部
+    &quot;status&quot;: 1000, //状态码
+    &quot;message&quot;: &quot;success&quot;, //消息
+    &quot;result_count&quot;: 1 //返回数据量
+  },
+  &quot;data&quot;: {//数据部
+    ......//具体数据
+  }
+}
+</code></pre>
+
+<p><em><strong>示例</strong></em></p>
+<pre><code>{
+  &quot;header&quot;: {
+    &quot;status&quot;: 1000,
+    &quot;message&quot;: &quot;success&quot;,
+    &quot;result_count&quot;: 1
+  },
+  &quot;data&quot;: {
+    &quot;user&quot;: {
+        &quot;id&quot;: 1,
+        &quot;username&quot;: &quot;18888888888&quot;,
+        &quot;password&quot;: null,
+        &quot;token&quot;: &quot;MXxuN2wxZ3BhZmNkfDE0NjI1MDc1MzA2NTc=&quot;,
+        &quot;display_name&quot;: &quot;lalala&quot;,
+        &quot;display_picture&quot;: &quot;http://192.168.31.185:8080/cdn/1460344561925.jpg&quot;,
+        &quot;created_on&quot;: 1458285193000,
+        &quot;ext_open_id&quot;: &quot;oI_9kuBoe5blGJDDP6O7GkBXummE&quot;,
+        &quot;ext_name&quot;: &quot;moon&quot;,
+        &quot;ext_type&quot;: &quot;qq&quot;,
+        &quot;location&quot;: &quot;&quot;,
+        &quot;baby_nickname&quot;: &quot;光光辉&quot;,
+        &quot;baby_dob&quot;: 1448553600000,
+        &quot;baby_gender&quot;: &quot;female&quot;,
+        &quot;status_&quot;: &quot;active&quot;
+  },
+    &quot;userId&quot;: &quot;cbd41c6103064d3f0af848208c20ece2&quot;,
+    &quot;userCode&quot;: &quot;7r7nzgcfyn&quot;
+  }
+}
+</code></pre>
+
+<h4>6.6 返回数据状态码</h4>
+<p>后台返回状态码不能随便写，必须遵循以下规则</p>
+<blockquote>
+<ul>
+<li>
+<p>公共状态如成功(&quot;success&quot;)必须是1000，失败(&quot;failure&quot;)必须是1100，其他新增加的公共状态码须在
+在1000到1999之间。</p>
+</li>
+<li>
+<p>处理异常用状态须在2000到2999之间。</p>
+</li>
+<li>
+<p>用户相关状态须在3000到3999之间。</p>
+</li>
+<li>
+<p>项目业务相关状态须在4000到4999之间</p>
+</li>
+</ul>
+</blockquote>
+<p>具体示例如下：</p>
+<pre><code>//In common use
+SUCCESS(1000, &quot;success&quot;),
+FAILURE(1100, &quot;failure&quot;),
+
+//Handle with ExceptionHandler
+ERROR_REGISTER(2010, &quot;user already exist&quot;),
+INSERT_DUPLICATE(2011, &quot;insert repeat&quot;),
+AUTHENTICATION_ERROR(2012,&quot;authentication_error&quot;),  
+INVALID_PARAMETER(2020,&quot;invalid_parameter&quot;),
+INVALID_TOKEN(2100,&quot;Invalid token&quot;),
+INTERNAL_SERVER_ERROR(2222,&quot;internal_server_error&quot;),
+
+//User Part
+USER_NOT_EXIST(3001, &quot;user not exist&quot;),
+ERROR_CODE(3101,&quot;verificationCode is wrong&quot;),
+CODE_TIMEOUT(3102,&quot;verificationCode is overdue&quot;),
+USER_FROZEN_ERROR(3013,&quot;this account is frozen&quot;),
+ERROR_OLDPASSWORD(3200,&quot;old password is wrong&quot;),
+
+//According to the project
+NOT_FOUND(4010,&quot;not_found&quot;),
+WARN_CART_FULL(4100,&quot;cart was full&quot;),
+POINTS_NOT_AVALIABLE(4001,&quot;points not avaliable&quot;),
+AMOUNT_NOT_AVALIABLE(4011,&quot;amount not avaliable&quot;),
+BARCODE_NOT_FOUND(4020,&quot;barcode not found&quot;),
+EXIST_UNDONE_ORDER(4021,&quot;exist_undone_order&quot;),
+PARTICIPATED_IN_ACTIVITIES(4030,&quot;participated in activities&quot;)
+;
+</code></pre>
+
+<h4>6.7 API文档编写</h4>
+<blockquote>
+<ul>
+<li>
+<p>接口返回数据尽量不要出现null。</p>
+</li>
+<li>
+<p>每个接口会出现的状态必须注明清楚状态码、状态码说明。</p>
+</li>
+<li>
+<p>参数是否必须要明确表明，特殊情况要特别说明。</p>
+</li>
+<li>
+<p>每次更新文档必须更新文档更新记录，什么时间谁修改了什么，什么时间谁添加了什么等。</p>
+</li>
+<li>
+<p>特定的参数须注明，如machine_status——机器状态(on/off)、再如detail_json是json格式字符串须有如下提示</p>
+</li>
+</ul>
+</blockquote>
+<pre><code>注：detail_json数据格式
+
+[
+ {
+&quot;name&quot;: &quot;程蒙&quot;, 
+&quot;phone&quot;: &quot;18771004256&quot;, 
+&quot;province&quot;: &quot;广东省&quot;, 
+&quot;city&quot;: &quot;深圳&quot;, 
+&quot;district&quot;: &quot;南山区&quot;, 
+&quot;address&quot;: &quot;东方科技大厦1102&quot;, 
+&quot;defaultAddress&quot;: 1 //1为默认
+ }, 
+ {
+&quot;name&quot;: &quot;童俊&quot;, 
+&quot;phone&quot;: &quot;18771004255&quot;, 
+&quot;province&quot;: &quot;广东省&quot;, 
+&quot;city&quot;: &quot;深圳&quot;, 
+&quot;district&quot;: &quot;南山区&quot;, 
+&quot;address&quot;: &quot;东方科技大厦1102&quot;, 
+&quot;defaultAddress&quot;: 0
+ }
+]
+</code></pre>
+
+<h4>6.8 代码中必须要有必要的LOG</h4>
+<blockquote>
+<ul>
+<li>
+<p>log要显示类名、方法名、简要的说明和一些必要的数据。</p>
+</li>
+<li>
+<p>log要醒目，在log文件中要很清楚的看出。</p>
+</li>
+<li>
+<p>在方法的开始、成功结束、失败结束必须有log记录，一些逻辑比较复杂的需看具体情况增加log记录。</p>
+</li>
+</ul>
+</blockquote>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

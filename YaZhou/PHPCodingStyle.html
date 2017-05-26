@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Java_coding_style</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+
+/* TOC
+=============================================================================*/
+
+#TOC {
+  padding:0;margin:0 auto;
+  max-width:24%; height:95%;
+  left: 0;
+  position: fixed;
+  overflow: auto;
+  white-space:nowrap;
+}
+.TOCEntry { font-family: sans-serif;}
+.TOCEntry a { text-decoration: none; color: black; font-size: 110%; font-weight: bold;display: block;}
+.TOCEntry a:hover{color:red;}
+.TOCLevel1 { font-size: .11em; font-weight: bold;margin-left: 0;}
+.TOCLevel2 { font-size: .10em; margin-left: 1em; }
+.TOCLevel3 { font-size: .8em; margin-left: 2em; }
+.TOCLevel4 { font-size: .7em; margin-left: 2.5em; }
+.TOCLevel5 { font-size: .6em; margin-left: 3em; }
+.TOCLevel6 { font-size: .5em; margin-left: 3.5em; }
+.TOCSectNum:after { content: " "; }
+/* TABLES
+=============================================================================*/
+
+table {
+  border-collapse: collapse;
+}
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+</style>
+<script type="text/javascript">
+function toc() {
+  var toc = document.getElementById("TOC");
+  if (!toc) {
+    toc = document.createElement("div");
+    toc.id = "TOC";
+    document.body.insertBefore(toc, document.body.firstChild);
+  }
+  var headings;
+  if (document.querySelectorAll)
+    headings = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+  else
+    headings = findHeadings(document.body, []);
+  function findHeadings(root, sects) {
+    for(var c = root.firstChild; c != null; c = c.nextSibling) {
+      if (c.nodeType !== 1) continue;
+      if (c.tagName.length == 2 && c.tagName.charAt(0) == "H")
+        sects.push(c);
+      else
+        findHeadings(c, sects);
+    }
+    return sects;
+  }
+  var sectionNumbers = [0,0,0,0,0,0];
+  for(var h = 0; h < headings.length; h++) {
+    var heading = headings[h];
+    if (heading.parentNode == toc) continue;
+    var level = parseInt(heading.tagName.charAt(1));
+    if (isNaN(level) || level < 1 || level > 6) continue;
+    sectionNumbers[level-1]++;
+    for(var i = level; i < 6; i++) sectionNumbers[i] = 0;
+    var sectionNumber = sectionNumbers.slice(0,level).join(".")
+    var span = document.createElement("span");
+    span.className = "TOCSectNum";
+    heading.insertBefore(span, heading.firstChild);
+    var anchor = document.createElement("a");
+    anchor.name = "TOC"+sectionNumber;
+    heading.parentNode.insertBefore(anchor, heading);
+    var link = document.createElement("a");
+    var currentUrl = window.location.href.split("/");
+    var fileName = currentUrl[currentUrl.length - 1].split("#")[0];
+    link.href =  fileName  + "#TOC" + sectionNumber;
+    link.innerHTML = heading.innerHTML;
+    var entry = document.createElement("div");
+    entry.className = "TOCEntry TOCLevel" + level;
+    entry.appendChild(link);
+    toc.appendChild(entry);
+  }
+}
+window.onload=function(){ toc()}
+</script>
+</head>
+<body>
+<h2>PHP后台代码风格参考规范</h2>
+<blockquote>
+<p>Author：Zoe</p>
+<p>Last update：2017/03/21</p>
+</blockquote>
+<h3>1 概览</h3>
+<blockquote>
+<ul>
+<li>
+<p>PHP代码文件必须以 &lt;?php 或 &lt;?= 标签开始。</p>
+</li>
+<li>
+<p>PHP代码文件必须以 <font color="red">不带BOM的 UTF-8</font> 编码。</p>
+</li>
+<li>
+<p>PHP代码中应该只定义类、函数、常量等声明，或其他会产生 从属效应 的操作（如：生成文件输出以及修改.ini配置文件等），二者只能选其一。</p>
+</li>
+<li>
+<p>命名空间以及类必须符合自动加载规范。</p>
+</li>
+  <li>
+    <p>类的命名必须遵循 <font color="red">StudlyCaps</font> 大写开头的驼峰命名规范。</p>
+  </li>
+  <li>
+    <p>类中的常量所有字母都必须大写，单词间用下划线分隔。</p>
+  </li>
+  <li>
+    <p> 方法名称必须符合 <font color="red">camelCase</font> 式的小写开头驼峰命名规范。</p>
+  </li>
+  <li>
+    <p> 代码必须使用4个空格符而不是 tab键 进行缩进。</p>
+  </li>
+  <li>
+    <p> 每行的字符数应该软性保持在80个之内， 理论上一定不可多于120个， 但一定不能有硬性限制。</p>
+  </li>
+  <li>
+    <p> 每个 <font color="red">namespace</font> 命名空间声明语句和 <font color="red">use</font>
+      声明语句块后面，必须插入一个空白行。</p>
+  </li>
+  <li>
+    <p> 类的开始花括号({)必须写在函数声明后自成一行，结束花括号(})也必须写在函数主体后自成一行。</p>
+  </li>
+  <li>
+    <p> 方法的开始花括号({)必须写在函数声明后自成一行，结束花括号(})也必须写在函数主体后自成一行。</p>
+  </li>
+  <li>
+    <p> 类的属性和方法必须添加访问修饰符（<font color="red">private、protected 以及 public</font>）
+      ， <font color="red">abstract</font> 以及 <font color="red">final</font> 必须声明在访问修饰符之
+      前，而 <font color="red">static</font> 必须声明在访问修饰符之后。</p>
+  </li>
+  <li>
+    <p> 控制结构的关键字后必须要有一个空格符，而调用方法或函数时则一定不能有。</p>
+  </li>
+  <li>
+    <p> 控制结构的开始花括号({)必须写在声明的同一行，而结束花括号(})必须写在主体后自成一行。</p>
+  </li>
+  <li>
+    <p> 控制结构的开始左括号后和结束右括号前，都一定不能有空格符。</p>
+  </li>
+</ul>
+</blockquote>
+<h3>2 例子</h3>
+<p>以下例子程序简单地展示了以上大部分规范：</p>
+<pre><code>&lt;?php
+  namespace Vendor\Package;
+
+  use FooInterface;
+  use BarClass as Bar;
+  use OtherVendor\OtherPackage\BazClass;
+
+  class Foo extends Bar implements FooInterface
+  {
+      public function sampleFunction($a, $b = null)
+      {
+          if ($a === $b) {
+              bar();
+          } elseif ($a > $b) {
+          $foo->bar($arg1);
+          } else {
+              BazClass::bar($arg2, $arg3);
+          }
+      }
+
+      final public static function bar()
+      {
+      // method body
+      }
+  }
+</code></pre>
+<h3>3 命名空间和类</h3>
+<p>根据规范，每个类都独立为一个文件，且命名空间至少有一个层次：顶级的组织名称（vendor name）。
+  类的命名必须 遵循 StudlyCaps 大写开头的驼峰命名规范。
+  PHP 5.3及以后版本的代码必须使用正式的命名空间。</p>
+<pre><code>&lt;?php
+// PHP 5.3及以后版本的写法
+namespace Vendor\Model;
+
+class Foo
+{
+}
+</code></pre>
+<h3>4 类的常量、属性和方法</h3>
+<p>此处的“类”指代所有的类、接口以及可复用代码块（traits）。</p>
+<h4>4.1 常量</h4>
+<p>类的常量中所有字母都必须大写，词间以下划线分隔。
+  参照以下代码：</p>
+<pre><code>&lt;?php
+namespace Vendor\Model;
+
+class Foo
+{
+    const VERSION = '1.0';
+    const DATE_APPROVED = '2012-06-01';
+}
+  </code>
+</pre>
+<h4>4.2 属性</h4>
+<p>
+  类的属性命名可以遵循 大写开头的驼峰式 ($StudlyCaps)、小写开头的驼峰式 ($camelCase) 又或者是 下划线分隔式 ($under_score)，
+  本规范不做强制要求，但无论遵循哪种命名方式，都应该在一定的范围内保持一致。这个范围可以是整个团队、整个包、整个类或整个方法。
+</p>
+<pre><code>&lt;?php
+namespace Vendor\Package;
+
+class ClassName
+{
+    public $foo = null;
+}
+
+  </code>
+</pre>
+<h4>4.3 方法</h4>
+<p>方法名称必须符合 <font color="red">camelCase()</font> 式的小写开头驼峰命名规范。</p>
+<p>方法名称后一定不能有空格符，其开始花括号必须独占一行，结束花括号也必须在方法主体后单独成一行。
+  参数左括号后和右括号前一定不能有空格。</p>
+<pre><code>&lt;?php
+namespace Vendor\Package;
+
+class ClassName
+{
+    public function fooBarBaz($arg1, &$arg2, $arg3 = [])
+    {
+        // method body
+    }
+}
+</code>
+</pre>
+
+<h3>5 扩展和继承</h3>
+<p>关键词 extends 和 implements必须写在类名称的同一行。
+  类的开始花括号必须独占一行，结束花括号也必须在类主体后独占一行。</p>
+<pre><code>&lt;?php
+namespace Vendor\Package;
+
+use FooClass;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
+
+class ClassName extends ParentClass implements \ArrayAccess, \Countable
+{
+    // constants, properties, methods
+}
+</code></pre>
+<p>implements 的继承列表也可以分成多行，这样的话，每个继承接口名称都必须分开独立成行，包括第一个。<p></p>
+
+<pre><code>&lt;?php
+namespace Vendor\Package;
+
+use FooClass;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
+
+class ClassName extends ParentClass implements
+    \ArrayAccess,
+    \Countable,
+    \Serializable
+{
+    // constants, properties, methods
+}
+  </code></pre>
+
+<h3>6 方法的参数</h3>
+<p>参数列表中，每个参数后面必须要有一个空格，而前面一定不能有空格。
+  有默认值的参数，必须放到参数列表的末尾。
+</p>
+<pre><code>&lt;?php
+namespace Vendor\Package;
+
+class ClassName
+{
+    public function foo($arg1, &$arg2, $arg3 = [])
+    {
+        // method body
+    }
+}
+</code></pre>
+<h3>7 abstract、final以及static</h3>
+<p>需要添加 abstract 或 final 声明时， 必须写在访问修饰符前，而 static 则必须写在其后。
+</p>
+<pre><code>&lt;?php
+namespace Vendor\Package;
+
+abstract class ClassName
+{
+    protected static $foo;
+
+    abstract protected function zim();
+
+    final public static function bar()
+    {
+        // method body
+    }
+}</code>
+</pre>
+<h3>8 方法及函数调用</h3>
+<p>方法及函数调用时，方法名或函数名与参数左括号之间一定不能有空格，参数右括号前也 一定不能有空格。
+  每个参数前一定不能有空格，但其后必须有一个空格。
+</p>
+<pre><code>&lt;?php
+bar();
+$foo->bar($arg1);
+Foo::bar($arg2, $arg3);</code>
+</pre>
+<h3>9 控制结构</h3>
+<p>控制结构的基本规范如下：</p>
+<ul>
+<li>控制结构关键词后必须有一个空格。</li>
+<li>左括号 ( 后一定不能有空格。</li>
+<li>右括号 ) 前也一定不能有空格。</li>
+<li>右括号 ) 与开始花括号 { 间一定有一个空格。</li>
+<li>结构体主体一定要有一次缩进。</li>
+<li>结束花括号 } 一定在结构体主体后单独成行。</li>
+</ul>
+<p>
+  每个结构体的主体都必须被包含在成对的花括号之中，
+  这能让结构体更加结构话，以及减少加入新行时，出错的可能性。
+</p>
+<h3>10 if、elseif和else</h3>
+<p>标准的 if 结构如下代码所示，留意 括号、空格以及花括号的位置，
+  注意 else 和 elseif 都与前面的结束花括号在同一行。</p>
+<pre><code>&lt;?php
+  if ($expr1) {
+  // if body
+  } elseif ($expr2) {
+  // elseif body
+  } else {
+  // else body;
+  }</code>
+</pre>
+<P>应该使用关键词 elseif 代替所有 else if ，以使得所有的控制关键字都像是单独的一个词。</P>
+<h3>11 switch和case</h3>
+<p>标准的 switch 结构如下代码所示，留意括号、空格以及花括号的位置。
+  case 语句必须相对 switch 进行一次缩进，而 break 语句以及 case 内的其它语句都 必须 相对 case 进行一次缩进。
+  如果存在非空的 case 直穿语句，主体里必须有类似 // no break 的注释。
+</p>
+<pre><code> &lt;?php
+  switch ($expr) {
+      case 0:
+          echo 'First case, with a break';
+          break;
+      case 1:
+          echo 'Second case, which falls through';
+          // no break
+      case 2:
+      case 3:
+      case 4:
+          echo 'Third case, return instead of break';
+          return;
+      default:
+          echo 'Default case';
+          break;
+  }
+</code></pre>
+<h3>12 while和do while</h3>
+<p>一个规范的 while 语句应该如下所示，注意其 括号、空格以及花括号的位置。
+</p>
+<pre><code>&lt;?php
+  while ($expr) {
+  // structure body
+  }
+</code></pre>
+<p>标准的 do while 语句如下所示，同样的，注意其 括号、空格以及花括号的位置。</p>
+<pre><code>&lt;?php
+  do {
+  // structure body;
+  } while ($expr);</code></pre>
+
+<h3>13 for</h3>
+<p>标准的 for 语句如下所示，注意其 括号、空格以及花括号的位置。
+</p>
+<pre><code>&lt;?php
+  for ($i = 0; $i < 10; $i++) {
+  // for body
+  }
+</code></pre>
+
+<h3>14 foreach</h3>
+<p>标准的 foreach 语句如下所示，注意其 括号、空格以及花括号的位置。
+</p>
+<pre><code>&lt;?php
+  foreach ($iterable as $key => $value) {
+  // foreach body
+  }
+</code></pre>
+<h3>14 try，catch</h3>
+<p>标准的 try catch 语句如下所示，注意其 括号、空格以及花括号的位置。
+</p>
+<pre><code>&lt;?php
+  try {
+  // try body
+  } catch (FirstExceptionType $e) {
+  // catch body
+  } catch (OtherExceptionType $e) {
+  // catch body
+  }
+</code></pre>
+<h3>15 闭包</h3>
+<p>闭包声明时，关键词 function 后以及关键词 use 的前后都必须要有一个空格。
+  开始花括号必须写在声明的同一行，结束花括号必须紧跟主体结束的下一行。
+  参数列表和变量列表的左括号后以及右括号前，必须不能有空格。
+  参数和变量列表中，逗号前必须不能有空格，而逗号后必须要有空格。
+  闭包中有默认值的参数必须放到列表的后面。
+  标准的闭包声明语句如下所示，注意其 括号、逗号、空格以及花括号的位置。
+<pre><code> &lt;?php
+  $closureWithArgs = function ($arg1, $arg2) {
+  // body
+  };
+
+  $closureWithArgsAndVars = function ($arg1, $arg2) use ($var1, $var2) {
+  // body
+  };</code></pre>
+<p>
+参数列表以及变量列表可以分成多行，这样，包括第一个在内的每个参数或变量都必须单独成行，而列表的右括号与闭包的开始花括号必须放在同一行。
+以下几个例子，包含了参数和变量列表被分成多行的多情况。
+</p>
+<pre><code>&lt;?php
+  $longArgs_noVars = function (
+  $longArgument,
+  $longerArgument,
+  $muchLongerArgument
+  ) {
+  // body
+  };
+
+  $noArgs_longVars = function () use (
+  $longVar1,
+  $longerVar2,
+  $muchLongerVar3
+  ) {
+  // body
+  };
+
+  $longArgs_longVars = function (
+  $longArgument,
+  $longerArgument,
+  $muchLongerArgument
+  ) use (
+  $longVar1,
+  $longerVar2,
+  $muchLongerVar3
+  ) {
+  // body
+  };
+
+  $longArgs_shortVars = function (
+  $longArgument,
+  $longerArgument,
+  $muchLongerArgument
+  ) use ($var1) {
+  // body
+  };
+
+  $shortArgs_longVars = function ($arg) use (
+  $longVar1,
+  $longerVar2,
+  $muchLongerVar3
+  ) {
+  // body
+  };</code></pre>
+<p>注意，闭包被直接用作函数或方法调用的参数时，以上规则仍然适用。</p>
+<pre><code>&lt;?php
+  $foo->bar(
+  $arg1,
+  function ($arg2) use ($var1) {
+  // body
+  },
+  $arg3
+  );</code></pre>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
